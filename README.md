@@ -17,24 +17,5 @@ A estrutura geral é:
 
 ---
 
-!pip install \
-    "agilerl>=2.3.5" \
-    "gymnasium>=1.2.1" \
-    "imageio>=2.37.0" \
-    "matplotlib>=3.9.4" \
-    "mpe2>=0.0.1" \
-    "pettingzoo[mpe]>=1.25.0" \
-    "pillow>=12.0.0" \
-    "datasets"
 
-    %%writefile envs/speaker_listener_env.py
-from mpe2 import simple_speaker_listener_v4
-
-def make_speaker_listener_env(continuous=True, render=False):
-    """
-    Returns a single parallel MPE2 speaker-listener environment.
-    """
-    return simple_speaker_listener_v4.parallel_env(
-        continuous_actions=continuous,
-        render_mode="rgb_array" if render else None
-    )
+  
